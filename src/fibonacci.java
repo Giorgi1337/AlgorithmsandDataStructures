@@ -9,7 +9,6 @@ public class fibonacci {
 
         System.out.println(fib(n, mem));
     }
-
     private static long fib(int n, long[] mem) {
         if (mem[n] != -1)
             return mem[n];
@@ -22,7 +21,6 @@ public class fibonacci {
 
         return  result;
     }
-
     private static long betterfib(int n) {
         long[] arr = new long[n + 1];
 
