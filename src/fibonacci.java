@@ -1,13 +1,26 @@
+import java.util.Arrays;
+
 public class fibonacci {
     public static void main(String[] args) {
-        System.out.println(betterfib(100));
+        int n = 100;
+        long[] mem = new long[n + 1];
+
+        Arrays.fill(mem,-1);
+
+        System.out.println(fib(n, mem));
     }
 
-    private static long fib(int n) {
-        if (n <= 1){
+    private static long fib(int n, long[] mem) {
+        if (mem[n] != -1)
+            return mem[n];
+
+        if (n <= 1)
             return n;
-        }
-        return fib(n - 1) + fib(n - 2);
+
+        long result =  fib(n - 1, mem) + fib(n - 2, mem);
+        mem[n] = result;
+
+        return  result;
     }
 
     private static long betterfib(int n) {
